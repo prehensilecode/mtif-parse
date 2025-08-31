@@ -10,8 +10,7 @@ import mtif_parse
 fh = open('path/to/some/file.txt', 'r')
 
 for entry in mtif_parse.MTIF(fh):
-  do something with entry ...
-  
+    do something with entry ...
 ```
 
 ## Notes
