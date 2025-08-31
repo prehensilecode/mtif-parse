@@ -1,10 +1,8 @@
-Movable-Type-Parser
-===================
+# mtif-parser
 
 Library for parsing Movable type export text files.
 
-
-##Usage##
+## Usage
 
 ```python
 import mtif_parse
@@ -16,13 +14,13 @@ for entry in mtif_parse.MTIF(fh):
   
 ```
 
-##Notes##
+## Notes
 
 1. MTIF will also accept string data.
 2. MTIF is an iterator class so that you process a big file with a small memory footprint.
 
+## Example entry
 
-##Example entry##
 ```python
 {
   'ALLOW COMMENTS': '1',
