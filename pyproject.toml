@@ -1,0 +1,17 @@
+[project]
+name = "mtif-parse"
+version = "12.06.1"
+description = "Library for parsing Movable type export text files."
+authors = [
+    {name = "Paul Bailey",email = "paul.m.bailey@gmail.com"}
+]
+license = {text = "BSD-4-clause"}
+readme = "README.md"
+requires-python = ">=3"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
