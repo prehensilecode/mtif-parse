@@ -11,7 +11,15 @@ requires-python = ">=3"
 dependencies = [
 ]
 
+[project.urls]
+repository = "https://github.com/mouthwateringmedia/Movable-Type-Parser"
+"Bug Tracker" = "https://github.com/mouthwateringmedia/Movable-Type-Parser/issues"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+include = [
+  { path = "LICENSE.txt", format = "sdist" },
+]
