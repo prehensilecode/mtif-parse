@@ -1,11 +1,6 @@
 import codecs
-import types
 
-try:
-  from cStringIO import StringIO
-
-except:
-  from StringIO import StringIO
+from io import StringIO
 
 class MTIF (object):
   def __init__ (self, stuff):
@@ -21,7 +16,7 @@ class MTIF (object):
   def __iter__ (self):
     return self
 
-  def next (self):
+  def __next__ (self):
     entry = []
 
     if self.eof:
@@ -30,7 +25,8 @@ class MTIF (object):
     while 1:
       line = self.fobj.readline()
       if line:
-        line = line.strip().lstrip(codecs.BOM_UTF8)
+        #line = line.strip().lstrip(codecs.BOM_UTF8)
+        line = line.strip()
         if line == '-' * 8:
           if entry:
             return self.parse_entry(entry)
@@ -119,8 +115,8 @@ class MTIF (object):
     return ret
 
   def listify (self, ret, key, value):
-    if ret.has_key(key):
-      if type(ret[key]) is types.ListType:
+    if key in ret:
+      if type(ret[key]) is list:
         ret[key].append(value)
 
       else:
