@@ -25,7 +25,7 @@ class MTIF (object):
     while 1:
       line = self.fobj.readline()
       if line:
-        line = line.strip()
+        line = line.strip().lstrip(codecs.BOM_UTF8)
         if line == '-' * 8:
           if entry:
             return self.parse_entry(entry)
